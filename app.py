@@ -4,6 +4,8 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def app():
+def inicio():
     return 'teste'
 
+
+app.run()
