@@ -10,7 +10,10 @@ def data_extenso():
 
 def cpf_cnpj(_cpf_cnpj):
     if len(str(_cpf_cnpj)) <= 11:
-        return f'{_cpf_cnpj[-11:-8]}.{_cpf_cnpj[-8:-5]}.{_cpf_cnpj[-5:-2]}-{_cpf_cnpj[-2:]}'
+        return f'{_cpf_cnpj[:-8]}.{_cpf_cnpj[-8:-5]}.{_cpf_cnpj[-5:-2]}-{_cpf_cnpj[-2:]}'
     else:
-        return f'{_cpf_cnpj[-14:-12]}.{_cpf_cnpj[-12:-9]}.{_cpf_cnpj[-9:-6]}/{_cpf_cnpj[-6:-2]}-{_cpf_cnpj[-2:]}'
+        return f'{_cpf_cnpj[:-12]}.{_cpf_cnpj[-12:-9]}.{_cpf_cnpj[-9:-6]}/{_cpf_cnpj[-6:-2]}-{_cpf_cnpj[-2:]}'
 
+
+def formata_processo(_processo):
+    return f'{_processo[:-11]}.{_processo[-11:-9]}.{_processo[-9:-7]}.{_processo[-7:-1]}-{_processo[-1:]}'

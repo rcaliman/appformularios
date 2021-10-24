@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from numero_por_extenso import monetario
-from util import data_extenso, cpf_cnpj
+from util import data_extenso, cpf_cnpj, formata_processo
 
 app = Flask(__name__)
 
@@ -23,7 +23,8 @@ def imprimir_declaracao_de_isencao_irpf():
                            dados=request.form.to_dict(),
                            valor_extenso=valor_extenso,
                            data_extenso=data_extenso(),
-                           cpf_cnpj_formatado=cpf_cnpj_formatado
+                           cpf_cnpj_formatado=cpf_cnpj_formatado,
+                           formata_processo=formata_processo(request.form.get('processo'))
                            )
 
 
