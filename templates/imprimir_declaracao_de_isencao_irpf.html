@@ -31,33 +31,33 @@
         </div>
         <div class='row mt-3'>
             <div class='col-12 justificado'>
-                {% if dados['opcao1'] %}
-                <ol>
-                    <li>
+                {% if dados['opcao'] == 'opcao1' %}
+                <dl>
+                    <dd>
                         ( X ) o montante de R$ {{ dados['valornumero'] }}
                         ({{ valor_extenso }}) constitui rendimento isento e não
                         tributável;
-                    </li>
-                    <li>
+                    </dd>
+                    <dd>
                         (&nbsp;&nbsp;&nbsp;&nbsp;) está inscrita no Sistema Integrado
                         de Pagamento de Impostos e Contribuições das Microempresas e
                         das Empresas de Pequeno Porte (Simples).
-                    </li>
-                </ol>
+                    </dd>
+                </dl>
                 {% endif %}
-                {% if dados['opcao2'] %}
-                <ol>
-                    <li>
+                {% if dados['opcao']  == 'opcao2' %}
+                <dl>
+                    <dd>
                         (&nbsp;&nbsp;&nbsp;&nbsp;) o montante de R$ {{ dados['valornumero'] }}
                         ({{ valor_extenso }}) constitui rendimento isento e não
                         tributável;
-                    </li>
-                    <li>
+                    </dd>
+                    <dd>
                         ( X ) está inscrita no Sistema Integrado
                         de Pagamento de Impostos e Contribuições das Microempresas e
                         das Empresas de Pequeno Porte (Simples).
-                    </li>
-                </ol>
+                    </dd>
+                </dl>
                 {% endif %}
             </div>
         </div>
