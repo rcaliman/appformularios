@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<form name="declaracao" method="post" action="/imprimir_declaracao_de_isencao_irpf">
+    <header>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-12 text-center'>
+                    <h1>DECLARAÇÃO DE ISENÇÃO</h1>
+                    <h2>DEPÓSITO JUDICIAL</h2>
+                    <h3>Precatório ou Requisição de Pequeno Valor<br>
+                        Pessoa Física ou Pessoa Jurídica</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class='container mt-5'>
+            <div class='row'>
+                <div class='col-12 justificado'>
+                    <input type='text' size=40 name='nome' placeholder="nome do cliente"> inscrito no CPF/CNPJ sob o nº
+                    <input type='text' size=30 name='cpf-cnpj' placeholder="cpf do cliente (apenas numeros)">, para fins de não retenção do imposto de
+                    renda de que trata o art. 27 da Lei nº 10.833,
+                    de 29 de dezembro de 2003, sobre rendimentos
+                    a serem recebidos em cumprimento de decisão da
+                    Justica Federal, conforme Processo nº
+                    <input type='text' name='processo' placeholder="numero do processo"> da
+                    <input type='text' size=40 name='vara' placeholder="unidade da justiça + cidade/estado">,
+                    pagos pelo Banco do Brasil SA, declara que:
+                </div>
+            </div>
+            <div class='row mt-3'>
+                <div class='col-12 justificado'>
+                    <ol>
+                        <li>
+                            (<input type='text' name='opcao1' size=1>) o montante de R$ <input type='text'
+                                name='valornumero' size=40 placeholder="valor com vírgula e duas casas decimais"> constitui rendimento isento e não tributável;
+                        </li>
+                        <li>
+                            (<input type='text' name='opcao2' size=1>) está inscrita no Sistema Integrado
+                            de Pagamento de Impostos e Contribuições das Microempresas e
+                            das Empresas de Pequeno Porte (Simples).
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <center><button class='btn btn-primary'>Enviar</button></center>
+</form>
+{% endblock %}
