@@ -1,100 +1,100 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
- <form method="post" action="/imprimir_declaracao_de_isencao_irpf">
-<header>
-    <div class='container'>
-        <div class='row'>
+<form method="post" action="/imprimir_declaracao_de_isencao_irpf">
+    <header>
+        <div class='container'>
+            <div class='row'>
                 <div class='col-12 text-center mt-5'>
                     <h2>DECLARAÇÃO DE ISENÇÃO</h2>
                     <h3>DEPÓSITO JUDICIAL</h3>
                     <h4>Precatório ou Requisição de Pequeno Valor<br>
                         Pessoa Física ou Pessoa Jurídica</h4>
                 </div>
-        </div>
-    </div>
-</header>
-<section>
-    <div class='container mt-5'>
-        <div class='row'>
-            <div class='col-12 justificado'>
-                {{dados['nome']}} inscrito no CPF/CNPJ sob o nº
-                {{cpf_cnpj_formatado}}, para fins de não retenção do imposto de
-                renda de que trata o art. 27 da Lei nº 10.833,
-                de 29 de dezembro de 2003, sobre rendimentos
-                a serem recebidos em cumprimento de decisão da
-                Justica Federal, conforme Processo nº
-                {{formata_processo}} da
-                {{dados['vara']}}, pagos pelo
-                Banco do Brasil SA, declara que:
             </div>
         </div>
-        <div class='row mt-3'>
-            <div class='col-12 justificado'>
-                {% if dados['opcao'] == 'opcao1' %}
-                <dl>
-                    <dd>
-                        ( X ) o montante de R$ {{ dados['valornumero'] }}
-                        ({{ valor_extenso }}) constitui rendimento isento e não
-                        tributável;
-                    </dd>
-                    <dd>
-                        (&nbsp;&nbsp;&nbsp;&nbsp;) está inscrita no Sistema Integrado
-                        de Pagamento de Impostos e Contribuições das Microempresas e
-                        das Empresas de Pequeno Porte (Simples).
-                    </dd>
-                </dl>
-                {% endif %}
-                {% if dados['opcao']  == 'opcao2' %}
-                <dl>
-                    <dd>
-                        (&nbsp;&nbsp;&nbsp;&nbsp;) o montante de R$ {{ dados['valornumero'] }}
-                        ({{ valor_extenso }}) constitui rendimento isento e não
-                        tributável;
-                    </dd>
-                    <dd>
-                        ( X ) está inscrita no Sistema Integrado
-                        de Pagamento de Impostos e Contribuições das Microempresas e
-                        das Empresas de Pequeno Porte (Simples).
-                    </dd>
-                </dl>
-                {% endif %}
+    </header>
+    <section>
+        <div class='container mt-5'>
+            <div class='row'>
+                <div class='col-12 justificado'>
+                    {{dados['nome']}} inscrito no CPF/CNPJ sob o nº
+                    {{cpf_cnpj_formatado}}, para fins de não retenção do imposto de
+                    renda de que trata o art. 27 da Lei nº 10.833,
+                    de 29 de dezembro de 2003, sobre rendimentos
+                    a serem recebidos em cumprimento de decisão da
+                    Justica Federal, conforme Processo nº
+                    {{formata_processo}} da
+                    {{dados['vara']}}, pagos pelo
+                    Banco do Brasil SA, declara que:
+                </div>
+            </div>
+            <div class='row mt-3'>
+                <div class='col-12 justificado'>
+                    {% if dados['opcao'] == 'opcao1' %}
+                    <dl>
+                        <dd>
+                            ( X ) o montante de R$ {{ dados['valornumero'] }}
+                            ({{ valor_extenso }}) constitui rendimento isento e não
+                            tributável;
+                        </dd>
+                        <dd>
+                            (&nbsp;&nbsp;&nbsp;&nbsp;) está inscrita no Sistema Integrado
+                            de Pagamento de Impostos e Contribuições das Microempresas e
+                            das Empresas de Pequeno Porte (Simples).
+                        </dd>
+                    </dl>
+                    {% endif %}
+                    {% if dados['opcao'] == 'opcao2' %}
+                    <dl>
+                        <dd>
+                            (&nbsp;&nbsp;&nbsp;&nbsp;) o montante de R$ {{ dados['valornumero'] }}
+                            ({{ valor_extenso }}) constitui rendimento isento e não
+                            tributável;
+                        </dd>
+                        <dd>
+                            ( X ) está inscrita no Sistema Integrado
+                            de Pagamento de Impostos e Contribuições das Microempresas e
+                            das Empresas de Pequeno Porte (Simples).
+                        </dd>
+                    </dl>
+                    {% endif %}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-12 justificado'>
+                    O(a) beneficiário(a) fica ciente de que a falsidade na prestação
+                    destas informações o(a) sujeitará, juntamente com as demais pessoas
+                    que para ela concorrerem, às penalidades previstas na legislação
+                    tributária e penal, relativas à falsidade ideolótica (art. 299 do
+                    Código Penal) e ao crime contra a ordem tributária (art. 1º da Lei nº
+                    8.137, de 27 de dezembro de 1990).
+                </div>
             </div>
         </div>
-        <div class='row'>
-            <div class='col-12 justificado'>
-                O(a) beneficiário(a) fica ciente de que a falsidade na prestação
-                destas informações o(a) sujeitará, juntamente com as demais pessoas
-                que para ela concorrerem, às penalidades previstas na legislação
-                tributária e penal, relativas à falsidade ideolótica (art. 299 do
-                Código Penal) e ao crime contra a ordem tributária (art. 1º da Lei nº
-                8.137, de 27 de dezembro de 1990).
+    </section>
+    <section>
+        <div class='container mt-3'>
+            <div class='row'>
+                <div class='col-12 text-end'>
+                    {{data_extenso}}
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section>
-    <div class='container mt-3'>
-        <div class='row'>
-            <div class='col-12 text-end'>
-                {{data_extenso}}
+    </section>
+    <footer>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-12 text-center mt-5'>
+                    __________________________________________________________________________<br>
+                    Assinatura do(a) beneficiário(a) ou de seu representante legal
+                </div>
+                <div class='col-12 text-center mt-5'>
+                    __________________________________________________________________________<br>
+                    Abono da assinatura pela instituição financeira
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<footer>
-    <div class='container'>
-        <div class='row'>
-            <div class='col-12 text-center mt-5'>
-                __________________________________________________________________________<br>
-                Assinatura do(a) beneficiário(a) ou de seu representante legal
-            </div>
-            <div class='col-12 text-center mt-5'>
-                __________________________________________________________________________<br>
-                Abono da assinatura pela instituição financeira
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 </form>
 {% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<form method='post' action='/imprimir_declaracao_de_renda'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-12 text-center'>
+                <h3><b>DECLARAÇÃO DE RENDIMENTOS</b></h3>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-2'>
+                <b>NOME:</b>
+            </div>
+            <div class='col-10'>
+                <input type='text' size='40' name="nome">
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-2'>
+                <b>CPF:</b>
+            </div>
+            <div class='col-10'>
+                <input type='text' size='20' name="cpf" placeholder="somente numeros">
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-2'>
+                <b>CI/EMISSOR:</b>
+            </div>
+            <div class='col-10'>
+                <input type='text' size=15 name="ci">
+                <input type='text' size=20 name="emissor" placeholder="somente numeros">
+                <b style='margin-left: 5px'>EMITIDO EM:</b>
+                <input type='text' name='ci_emissao' size=20 placeholder="somente numeros">
+            </div>
+        </div>
+        <div class='row'>
+            <div class=col-2>
+                <b>ENDEREÇO:</b>
+            </div>
+            <div class=col-10>
+                <textarea cols=60 rows=2 name="endereco"></textarea>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-12 justify-content-around'>
+                <p>Declaro para os devidos fins, sob as penas da lei, que o rendimento
+                    médio mensal dos últimos três meses, no período de
+                    <input type='text' size='10' name="data1_salario" placeholder="DDMMAAAA"> a
+                    <input type='text' size='10' name="data2_salario" placeholder="DDMMAAAA">
+                    deduzidos os custos/despesas, provenientes da minha atividade de
+                    <input type='text' name='atividade' size=40> foi de R$
+                    <input type='text' size='20' name="salario" placeholder="com vírgula e centavos">
+            </div>
+        </div>
+    </div>
+    <center><button class='btn btn-primary'>Enviar</button></center>
+</form>
+{% endblock conteudo %}

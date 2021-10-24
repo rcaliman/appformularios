@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class='container mt-5'>
+            <div class='row'>
+                <div class='col-12 text-center mt-3'>
+                    <h3><b>DECLARAÇÃO DE RENDIMENTOS</b></h3>
+                </div>
+            </div>
+            <div class='row mt-3'>
+                <div class='col-2'>
+                    <b>NOME:</b>
+                </div>
+                <div class='col-10'>
+                    {{ dados['nome'] }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-2'>
+                    <b>CPF:</b>
+                </div>
+                <div class='col-10'>
+                    {{ cpf }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-2'>
+                    <b>CI/EMISSOR:</b>
+                </div>
+                <div class='col-10'>
+                    {{ dados['ci'] }} {{ dados['emissor'] }}
+                    <b style='margin-left: 5px'>EMITIDO EM:</b> {{ ci_emissao }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class=col-2>
+                    <b>ENDEREÇO:</b>
+                </div>
+                <div class=col-10>
+                    {{ dados['endereco'] }}
+                </div>
+            </div>
+            <div class='row mt-3'>
+                <div class='col-12 justify-content-around'>
+                    <p>
+                        Declaro para os devidos fins, sob as penas da lei, que o rendimento
+                        médio mensal dos últimos três meses, no período de {{ data1_salario }}
+                        a {{ data2_salario }} deduzidos os custos/despesas, provenientes da minha
+                        atividade de {{ dados['atividade'] }} foi de R$ {{ dados['salario'] }} ({{valor_extenso}}).
+                    </p>
+                    <p>
+                        As informações acima prestadas constituem a expressão da verdade.
+                    </p>
+                </div>
+            </div>
+    <section>
+        <div class='container mt-3'>
+            <div class='row'>
+                <div class='col-12 text-end'>
+                    {{data_extenso}}
+                </div>
+            </div>
+        </div>
+    </section>
+            <div class='row'>
+                <div class='col-12 text-center mt-5'>
+                    <p>________________________________________________________________<br>
+                        {{ dados['nome'] }}<br>{{ cpf }}</p>
+                </div>
+            </div>
+        </div>
+{% endblock conteudo %}

@@ -8,6 +8,13 @@ def data_extenso():
     return f'Colatina-ES, {datetime.today().day} de {mes[datetime.today().month]} de {datetime.today().year}'
 
 
+def formata_data(data):
+    if len(str(data)) > 6:
+        return f'{data[-8:-6]}/{data[-6:-4]}/{data[-4:]}'
+    else:
+        return f'{data[-6:-4]}/{data[-4:]}'
+
+
 def cpf_cnpj(_cpf_cnpj):
     if len(str(_cpf_cnpj)) <= 11:
         return f'{_cpf_cnpj[:-8]}.{_cpf_cnpj[-8:-5]}.{_cpf_cnpj[-5:-2]}-{_cpf_cnpj[-2:]}'
