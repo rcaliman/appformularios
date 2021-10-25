@@ -7,7 +7,7 @@ DECIMAIS = (('décimo', 'décimos'), ('centésimo', 'centésimos'), ('milésimo'
 )
 UNIDADES = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove')
 DEZENA_ESPECIAL = ('', 'onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove')
-DEZENAS = ('', 'dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa')
+DEZENAS = ('', 'dez', 'vinte', 'trinta', 'quarenta', 'cincoenta', 'sessenta', 'setenta', 'oitenta', 'noventa')
 CENTENAS = ('cem', 'cento', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seiscentos', 'setecentos','oitocentos', 'novecentos')
 MILHAR = (('milhão', 'milhões'), ('bilhão', 'bilhões'), ('trilhão', 'trilhões'), ('quatrilhão', 'quatrilhões'), ('quintilhão', 'quintilhões'),
     ('sextilhão', 'sextilhões'), ('septilhão', 'septilhões'), ('octilhão', 'octilhões'), ('nonilhão', 'nonilhões'), ('decilhão', 'decilhões'),
@@ -87,6 +87,7 @@ def milhares(ternos):
     return numero_extenso
 
 
+
 def separar_casas(numero):
     digitos = list(str(numero))
     tamanho = len(digitos)
@@ -151,9 +152,7 @@ def real(numero:float or str):
         
     return extenso
 
-
 def monetario(numero:float or str):
-    numero = 0 if not numero else numero
     inteiro, decimal = formatar(str(numero))
     extenso = milhares(separar_casas(inteiro))
 
@@ -209,4 +208,3 @@ if __name__ == '__main__':
             break
         except ValueError as erro:
             print('ERRO!! ', erro)
-            
