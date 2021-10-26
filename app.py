@@ -16,7 +16,7 @@ def declaracao_de_isencao_irpf():
 
 @app.route('/imprimir_declaracao_de_isencao_irpf', methods=['POST'])
 def imprimir_declaracao_de_isencao_irpf():
-    salario = formata_moeda(request.form.get('valornumero'))
+    salario = formata_moeda(request.form.get('valor_numero'))
     valor_extenso = valor_por_extenso(salario)
     cpf_cnpj_formatado = cpf_cnpj(request.form.get('cpf-cnpj'))
     return render_template('imprimir_declaracao_de_isencao_irpf.html',
