@@ -28,7 +28,7 @@ def data_extenso() -> str:
     mes = 'janeiro', 'fevereiro', 'marco', 'abril', 'maio', 'junho',\
           'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
 
-    return f'Colatina-ES, {datetime.today().day} de {mes[datetime.today().month]} de {datetime.today().year}'
+    return f'Colatina-ES, {datetime.today().day} de {mes[datetime.today().month -1]} de {datetime.today().year}'
 
 
 def formata_data(data: str) -> str:
