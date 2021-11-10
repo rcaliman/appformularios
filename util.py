@@ -62,7 +62,7 @@ def formata_processo(_processo: str) -> str:
     :param _processo: str
     :return: str
     """
-    return f'{_processo[:-11]}.{_processo[-11:-9]}.{_processo[-9:-7]}.{_processo[-7:-1]}-{_processo[-1:]}'
+    return f'{_processo[-20:-13]}-{_processo[-13:-11]}.{_processo[-11:-7]}.{_processo[-7:-6]}.{_processo[-6:-4]}.{_processo[-4:]}'
 
 
 def formata_moeda(_valor: str) -> str:
